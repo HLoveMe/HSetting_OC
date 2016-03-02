@@ -37,6 +37,16 @@
     }else{
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+    if ([self.assistView isKindOfClass:[UISwitch class]]) {
+        UISwitch *one = (UISwitch *)self.assistView;
+        [one addTarget:self action:@selector(touchSwitch:) forControlEvents:UIControlEventValueChanged];
+        id value = [[NSUserDefaults standardUserDefaults] objectForKey:self.model.title];
+        if (value) {
+            [one setOn:[value boolValue] animated:YES];
+        }
+    }
+    
+    
     UIView *assistView =self.model.assistView;
     assistView.frame = [self rectWithView:assistView];
     [self.contentView addSubview:assistView];
@@ -59,5 +69,11 @@
         rect.origin.y = (cellHeight-rect.size.height)/2;
     }
     return rect;
+}
+-(void)touchSwitch:(UISwitch*)sender{
+    BOOL status = sender.on;
+    NSNumber *flag = [[NSNumber alloc]initWithBool:status];
+    NSUserDefaults *Udefault = [NSUserDefaults standardUserDefaults];
+    [Udefault setObject:flag forKey:self.model.title];
 }
 @end

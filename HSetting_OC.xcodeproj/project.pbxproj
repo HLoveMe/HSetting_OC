@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B206D71A1C812F0F00F66DE7 /* HSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7191C812F0F00F66DE7 /* HSwitch.m */; };
 		B206D7261C81390A00F66DE7 /* HArrowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7211C81390A00F66DE7 /* HArrowModel.m */; };
 		B206D7271C81390A00F66DE7 /* HCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7231C81390A00F66DE7 /* HCellModel.m */; };
 		B206D7281C81390A00F66DE7 /* HRefreshModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7251C81390A00F66DE7 /* HRefreshModel.m */; };
@@ -46,8 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B206D7181C812F0F00F66DE7 /* HSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSwitch.h; sourceTree = "<group>"; };
-		B206D7191C812F0F00F66DE7 /* HSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSwitch.m; sourceTree = "<group>"; };
 		B206D7201C81390A00F66DE7 /* HArrowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HArrowModel.h; sourceTree = "<group>"; };
 		B206D7211C81390A00F66DE7 /* HArrowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HArrowModel.m; sourceTree = "<group>"; };
 		B206D7221C81390A00F66DE7 /* HCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCellModel.h; sourceTree = "<group>"; };
@@ -144,8 +141,6 @@
 		B206D70E1C8128D300F66DE7 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				B206D7181C812F0F00F66DE7 /* HSwitch.h */,
-				B206D7191C812F0F00F66DE7 /* HSwitch.m */,
 				B206D7301C813F8400F66DE7 /* HCell.h */,
 				B206D7311C813F8400F66DE7 /* HCell.m */,
 			);
@@ -395,7 +390,6 @@
 				B206D73B1C8163B500F66DE7 /* resultViewC.m in Sources */,
 				B206D7271C81390A00F66DE7 /* HCellModel.m in Sources */,
 				B2DE838D1C8127AA00DAB4B5 /* ViewController.m in Sources */,
-				B206D71A1C812F0F00F66DE7 /* HSwitch.m in Sources */,
 				B206D7321C813F8400F66DE7 /* HCell.m in Sources */,
 				B206D7381C81408800F66DE7 /* setting.m in Sources */,
 				B206D7421C8175F100F66DE7 /* targetViewController.m in Sources */,

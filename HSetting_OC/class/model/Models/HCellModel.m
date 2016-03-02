@@ -35,7 +35,7 @@
         }
             break;
         case HSwitchType:{
-            self.assistView  =[[HSwitch alloc]init];
+            self.assistView  =[[UISwitch alloc]init];
         }
             break;
         case HCustomType:
@@ -48,9 +48,9 @@
     objc_setAssociatedObject(self, @"attribute", addActionFunc, OBJC_ASSOCIATION_COPY);
 }
 -(void)setSwitchInitStatus:(BOOL)status{
-    NSUserDefaults *one=[NSUserDefaults standardUserDefaults];
-    if ([self.assistView isKindOfClass:[HSwitch class]]&&[one boolForKey:self.title]==status) {
-        [one setBool:status forKey:self.title];
+    if ([self.assistView isKindOfClass:[UISwitch class]]) {
+        UISwitch *one = (UISwitch *)self.assistView;
+        [one setOn:status animated:YES];
     }
 }
 -(void)setAssistLableText:(NSString*)text{

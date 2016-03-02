@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
-#import "HSwitch.h"
 #import "constant.h"
 typedef void(^TouchAction)(UIView *assistView);
 typedef void(^addAttributeAction)(UITableViewCell *cell, UIView *view);
