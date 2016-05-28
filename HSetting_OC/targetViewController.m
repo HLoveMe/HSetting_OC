@@ -11,10 +11,13 @@
 @implementation targetViewController
 -(void)viewDidLoad{
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     NSLog(self.currentTitle);
     self.currentTitle = @"朱子豪";
     
     self.button.frame = CGRectMake(0, 0, 100, 100);
+    self.button.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.button];
     
     [self.arrowModel setTitle:@"New Model"];
 }

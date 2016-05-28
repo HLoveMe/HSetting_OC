@@ -44,20 +44,23 @@
             self.assistView = nil;
     }
 }
--(void)setAssistViewAttribute:(addAttributeAction)addActionFunc{
+-(instancetype)setAssistViewAttribute:(addAttributeAction)addActionFunc{
     objc_setAssociatedObject(self, @"attribute", addActionFunc, OBJC_ASSOCIATION_COPY);
+    return self;
 }
--(void)setSwitchInitStatus:(BOOL)status{
+-(instancetype)setSwitchInitStatus:(BOOL)status{
     if ([self.assistView isKindOfClass:[UISwitch class]]) {
         UISwitch *one = (UISwitch *)self.assistView;
         [one setOn:status animated:YES];
     }
+    return self;
 }
--(void)setAssistLableText:(NSString*)text{
+-(instancetype)setAssistLableText:(NSString*)text{
     if([self.assistView isKindOfClass:[UILabel class]]){
         UILabel *label = (UILabel *)self.assistView;
         [label setText:text];
     }
+    return self;
 }
 -(void)dealloc{
     objc_removeAssociatedObjects(self);

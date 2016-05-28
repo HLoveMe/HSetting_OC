@@ -9,7 +9,7 @@
 #import "HRefreshModel.h"
 
 @implementation HRefreshModel
--(instancetype)initWithTitle:(NSString *)title imageName:(NSString *)name func:(TouchAction)func  assistType:(HAssistType)type{
+-(instancetype)initWithTitle:(NSString *)title imageName:(NSString *)name assistType:(HAssistType)type func:(TouchAction)func{
     if(self=[super init]){
         self.title = title;
         self.imageName = name;

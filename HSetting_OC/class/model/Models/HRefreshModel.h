@@ -11,7 +11,7 @@
 @interface HRefreshModel : HCellModel
 
 /**标题 图片 点击函数 目标 辅助视图*/
--(instancetype)initWithTitle:(NSString *)title imageName:(NSString *)name func:(TouchAction)func  assistType:(HAssistType)type;
+-(instancetype)initWithTitle:(NSString *)title imageName:(NSString *)name assistType:(HAssistType)type func:(TouchAction)func;
 
 /**标题 图片 点击函数 目标 自定义辅助视图*/
 -(instancetype)initWithTitle:(NSString *)title imageName:(NSString *)name func:(TouchAction)func  assistView:(UIView *(^)())assistV;

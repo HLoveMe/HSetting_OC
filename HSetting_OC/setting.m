@@ -39,12 +39,12 @@
     
     
      /**给定默认的视图 Label*/
-    HRefreshModel *one2 = [[HRefreshModel alloc]initWithTitle:@"白银" imageName:@"stage_2" func:^(UIView *assistView) {
+    HRefreshModel *one2 = [[HRefreshModel alloc]initWithTitle:@"白银" imageName:@"stage_2" assistType:HLableType func:^(UIView *assistView) {
         UILabel *one =(UILabel *)assistView;
         one.text = @"梁珊";
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             one.text = @"朱子豪";
-        });    } assistType:HLableType];
+        });    }];
     [one2 setAssistLableText:@"朱子豪"];
     [one2 setAssistViewAttribute:^(UITableViewCell *cell, UIView *view) {
        view.backgroundColor = [UIColor orangeColor];
@@ -54,16 +54,16 @@
     }];
     
      /**给定默认的视图 UISwitch*/
-    HRefreshModel *one3 = [[HRefreshModel alloc]initWithTitle:@"青铜" imageName:@"stage_5" func:^(UIView *assistView) {
+    HRefreshModel *one3 = [[HRefreshModel alloc]initWithTitle:@"青铜" imageName:@"stage_5" assistType:HSwitchType func:^(UIView *assistView) {
         
-    } assistType:HSwitchType];
+    } ];
     [one3 setSwitchInitStatus:NO];
     
     
      /**没有辅助视图*/
-    HRefreshModel *one4 = [[HRefreshModel alloc]initWithTitle:@"砖石" imageName:@"stage_7" func:^(UIView *assistView) {
+    HRefreshModel *one4 = [[HRefreshModel alloc]initWithTitle:@"砖石" imageName:@"stage_7" assistType:HNoAssistView func:^(UIView *assistView) {
         
-    } assistType:HNoAssistView];
+    }];
     
     
      /**自定义辅助视图*/

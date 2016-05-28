@@ -20,9 +20,9 @@
     HArrowModel *two1 = [[HArrowModel alloc]initWithTitle:@"文字向下传递" imageName:@"stage_5" func:nil clazz:[targetViewController class] assistV:HLableType];
     [two1 setAssistLableText:@"战争学院"];
      /**传递Label的值*/
-//    [two4 setTransferCurrentLabelValueForInfo:@"currentTitle"];
-    
-     /**高度自定义*/
+//    [two1 setTransferCurrentLabelValueForInfo:@"currentTitle"];
+    //或者
+     /** 自定义向下传递的内容*/
     [two1 setTransferCurrentLabelValuePropertyName:@"button" value:^id(UIView *assistV) {
         return [[UIButton alloc]init];
     } newValue:^(id value,UIView *assisetView) {
@@ -35,9 +35,12 @@
     
      /**传递整个Model*/
     __block HArrowModel *two2 =[[HArrowModel alloc]initWithTitle:@"Model向下传递" imageName:@"stage_5" func:^(UIView *one){
-    
+        
+        int a=1;
     }  clazz:[targetViewController class]];
+    
     [two2 setTransferCurrentLabelValuePropertyName:@"arrowModel" value:^id(UIView *assistView){
+        
         return two2;
     } newValue:^(id value, UIView *assistView) {
         HArrowModel *model = value;

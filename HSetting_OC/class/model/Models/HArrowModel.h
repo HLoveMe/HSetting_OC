@@ -19,11 +19,11 @@ typedef void(^newValue)(id value,UIView *assistView);
  */
 -(void)setTransferCurrentLabelValueForInfo:(NSString *)propertyName;
 /**
- *  向下传递值 只能传递一个值 高度自定义
+ *  向下传递值 只能传递一个值 高度自定义传递方式
  *
  *  @param propertyName 接受值的属性名
- *  @param block        返回 向下传递的值 (在跳转之前调用)
- *  @param complement   在返回该界面调用（用于给界面赋值）
+ *  @param block        block返回 向下传递的值 (在跳转之前调用)
+ *  @param complement   返回上级界面调用（用于给界面赋值）
  */
 -(void)setTransferCurrentLabelValuePropertyName:(NSString *)propertyName value:(transitiveBlock)block newValue:(newValue)complement;
 

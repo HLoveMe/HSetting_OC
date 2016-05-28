@@ -34,11 +34,11 @@ typedef enum {
 
 
  /**给辅助视图增加自定义的属性 在cell显示之前调用*/
--(void)setAssistViewAttribute:(addAttributeAction)addActionFunc;
+-(instancetype)setAssistViewAttribute:(addAttributeAction)addActionFunc;
 
 /**如果辅助视图为开关 要设置初始状态  只生效一次*/
--(void)setSwitchInitStatus:(BOOL)status;
+-(instancetype)setSwitchInitStatus:(BOOL)status;
 
 /**给Label设置值*/
--(void)setAssistLableText:(NSString*)text;
+-(instancetype)setAssistLableText:(NSString*)text;
 @end

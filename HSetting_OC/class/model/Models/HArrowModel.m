@@ -41,4 +41,7 @@
     }
     return self;
 }
+-(void)dealloc{
+    objc_removeAssociatedObjects(self);
+}
 @end
