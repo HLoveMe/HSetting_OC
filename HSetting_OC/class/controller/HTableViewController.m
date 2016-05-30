@@ -58,7 +58,9 @@
     return self.dataArray.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  cellHeight;
+    HItemGroup *group = self.dataArray[indexPath.section];
+    HCellModel *model = group.items[indexPath.row];
+    return  model.height;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return SectionHeadHeight;

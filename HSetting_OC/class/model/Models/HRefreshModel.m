@@ -18,7 +18,7 @@
     }
     return  self;
 }
--(instancetype)initWithTitle:(NSString *)title imageName:(NSString *)name func:(TouchAction)func  assistView:(UIView *(^)())assistV{
+-(instancetype)initWithTitle:(NSString *)title imageName:(NSString *)name assistView:(UIView *(^)())assistV  func:(TouchAction)func{
     if (self= [super init]) {
         self.title = title;
         self.imageName =name;

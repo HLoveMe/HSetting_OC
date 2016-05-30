@@ -12,8 +12,15 @@
 
 @end
 @implementation HCellModel
+-(instancetype)init{
+    if (self = [super init]) {
+        self.height =  cellHeight;
+    }
+    return self;
+}
 -(instancetype)initWithTitle:(NSString *)title imageName:(NSString *)name func:(TouchAction)func{
     if(self = [super init]){
+        self.height =  cellHeight;
         self.title = title;
         self.imageName = name;
         self.function = func;
@@ -29,7 +36,6 @@
         case HLableType:{
             UILabel *temp = [[UILabel alloc]init];
             temp.textAlignment = NSTextAlignmentRight;
-            temp.frame = CGRectMake(0, 0, assistViewMaxWidth, cellHeight);
             temp.font =  assistViewFont;
             self.assistView =temp;
         }
@@ -44,6 +50,13 @@
             self.assistView = nil;
     }
 }
+-(void)setHeight:(CGFloat)height{
+    _height = height;
+    if (self.assistView.frame.size.height<=0) {
+        self.assistView.frame = CGRectMake(0, 0, assistViewMaxWidth, height);
+    }
+}
+
 -(instancetype)setAssistViewAttribute:(addAttributeAction)addActionFunc{
     objc_setAssociatedObject(self, @"attribute", addActionFunc, OBJC_ASSOCIATION_COPY);
     return self;

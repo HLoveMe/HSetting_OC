@@ -14,5 +14,5 @@
 -(instancetype)initWithTitle:(NSString *)title imageName:(NSString *)name assistType:(HAssistType)type func:(TouchAction)func;
 
 /**标题 图片 点击函数 目标 自定义辅助视图*/
--(instancetype)initWithTitle:(NSString *)title imageName:(NSString *)name func:(TouchAction)func  assistView:(UIView *(^)())assistV;
+-(instancetype)initWithTitle:(NSString *)title imageName:(NSString *)name assistView:(UIView *(^)())assistV  func:(TouchAction)func;
 @end

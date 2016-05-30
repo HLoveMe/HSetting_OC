@@ -24,6 +24,8 @@ typedef enum {
 @property(nonatomic,copy)TouchAction function;
 @property(nonatomic,strong)UIView *assistView;
 @property(nonatomic,assign)HAssistType currentType;
+//constant.h default 44
+@property(nonatomic,assign)CGFloat height;
 
 
  /**标题 图片 功能*/

@@ -17,28 +17,28 @@
 
 -(void)loadData{
     HItemGroup *groupOne = [HItemGroup group];
-     /**自定义辅助视图 点击cell对辅助视图进行操作*/
-    HRefreshModel *one1 = [[HRefreshModel alloc]initWithTitle:@"白金" imageName:@"stage_1" func:^(UIView *assistView) {
+    /**自定义辅助视图 点击cell对辅助视图进行操作*/
+    HRefreshModel *one1 = [[HRefreshModel alloc]initWithTitle:@"白金" imageName:@"stage_1"  assistView:^UIView *{
+        /**这里的代码之后调用一次*/
+        UIActivityIndicatorView *one= [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        //        [one startAnimating]; 这种操作 在复用之后就会失效
+        return one;
+    } func:^(UIView *assistView) {
         UIActivityIndicatorView *action = (UIActivityIndicatorView *)assistView;
         if (action.isAnimating) {
             [action stopAnimating];
         }else
             [action startAnimating];
         
-    } assistView:^UIView *{
-         /**这里的代码之后调用一次*/
-         UIActivityIndicatorView *one= [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-//        [one startAnimating]; 这种操作 在复用之后就会失效
-        return one;
     }];
     [one1 setAssistViewAttribute:^(UITableViewCell *cell, UIView *view) {
-         /**每次显示之前就会调用代码块*/
+        /**每次显示之前就会调用代码块*/
         UIActivityIndicatorView *one = (UIActivityIndicatorView *)view;
         [one startAnimating];
     }];
     
     
-     /**给定默认的视图 Label*/
+    /**给定默认的视图 Label*/
     HRefreshModel *one2 = [[HRefreshModel alloc]initWithTitle:@"白银" imageName:@"stage_2" assistType:HLableType func:^(UIView *assistView) {
         UILabel *one =(UILabel *)assistView;
         one.text = @"梁珊";
@@ -47,31 +47,37 @@
         });    }];
     [one2 setAssistLableText:@"朱子豪"];
     [one2 setAssistViewAttribute:^(UITableViewCell *cell, UIView *view) {
-       view.backgroundColor = [UIColor orangeColor];
+        view.backgroundColor = [UIColor orangeColor];
         UILabel *lab = (UILabel *)view;
         lab.font = [UIFont boldSystemFontOfSize:14];
         cell.contentView.backgroundColor = [UIColor yellowColor];
     }];
+    one2.height=100;
     
-     /**给定默认的视图 UISwitch*/
+    /**给定默认的视图 UISwitch*/
     HRefreshModel *one3 = [[HRefreshModel alloc]initWithTitle:@"青铜" imageName:@"stage_5" assistType:HSwitchType func:^(UIView *assistView) {
         
     } ];
     [one3 setSwitchInitStatus:NO];
+    one3.height=100;
     
-    
-     /**没有辅助视图*/
-    HRefreshModel *one4 = [[HRefreshModel alloc]initWithTitle:@"砖石" imageName:@"stage_7" assistType:HNoAssistView func:^(UIView *assistView) {
+    /**没有辅助视图*/
+    HRefreshModel *one4 = [[HRefreshModel alloc]initWithTitle:@"砖石" imageName:@"stage_7" assistType:HCustomType func:^(UIView *assistView) {
         
     }];
+    UIButton *button= [UIButton new];
+    button.backgroundColor = [UIColor redColor];
+    button.frame =CGRectMake(0, 0, 100, 30);
+    [one4 setAssistView:button];
+    one4.height=80;
     
-    
-     /**自定义辅助视图*/
-    HRefreshModel *one5 =[[HRefreshModel alloc]initWithTitle:@"黄金" imageName:@"stage_4" func:^(UIView *assistView) {
-        
-    } assistView:^UIView *{
+    /**自定义辅助视图*/
+    HRefreshModel *one5 =[[HRefreshModel alloc]initWithTitle:@"黄金" imageName:@"stage_4" assistView:^UIView *{
         return [[UISegmentedControl alloc]initWithItems:@[@"one",@"two"]];
-    }];
+    } func:^(UIView *assistView) {
+        
+    } ];
+    one5.height = 88;
     
     groupOne.headTitle = @"第一组";
     [groupOne.items addObject:one1];
@@ -84,7 +90,7 @@
     
     
     HItemGroup *groupTwo = [HItemGroup group];
-
+    
     HArrowModel *two3 = [[HArrowModel alloc]initWithTitle:@"黄金" imageName:@"stage_4" func:^(UIView *assistView) {
         
     } clazz:[resultViewC class]];

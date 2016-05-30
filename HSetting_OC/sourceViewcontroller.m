@@ -36,12 +36,12 @@
      /**传递整个Model*/
     __block HArrowModel *two2 =[[HArrowModel alloc]initWithTitle:@"Model向下传递" imageName:@"stage_5" func:^(UIView *one){
         
-        int a=1;
     }  clazz:[targetViewController class]];
     
+    __weak HArrowModel *this = two2;
     [two2 setTransferCurrentLabelValuePropertyName:@"arrowModel" value:^id(UIView *assistView){
         
-        return two2;
+        return this;
     } newValue:^(id value, UIView *assistView) {
         HArrowModel *model = value;
         NSLog(@"%@",model.title);

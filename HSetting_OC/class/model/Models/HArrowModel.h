@@ -7,8 +7,23 @@
 //
 
 #import "HCellModel.h"
+/**
+ *  用于设计传递的内容
+ *
+ *  @param assistView 赋值视图
+ *
+ *  @return 向下传递的内容
+ */
 typedef id(^transitiveBlock)(UIView *assistView);
+/**
+ *  在返回上级界面之后调用
+ *
+ *  @param value      修改之后的内容
+ *  @param assistView 赋值视图
+ */
 typedef void(^newValue)(id value,UIView *assistView);
+
+
 @interface HArrowModel : HCellModel
 
 @property(nonatomic,strong)Class clazz;

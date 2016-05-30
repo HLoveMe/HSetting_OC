@@ -59,14 +59,14 @@
     CGRect rect;
     if(self.accessoryType == UITableViewCellAccessoryNone){
         rect.size.width = view.bounds.size.width<assistViewMaxWidth? view.bounds.size.width:assistViewMaxWidth;
-        rect.size.height = view.bounds.size.height>cellHeight?cellHeight:view.bounds.size.height;
+        rect.size.height = view.bounds.size.height>self.model.height?self.model.height:view.bounds.size.height;
         rect.origin.x = Swidth - rect.size.width-10;
-        rect.origin.y = (cellHeight-rect.size.height)/2;
+        rect.origin.y = (self.model.height-rect.size.height)/2;
     }else{
         rect.size.width = view.bounds.size.width<assistViewMaxWidth? view.bounds.size.width:assistViewMaxWidth;
-        rect.size.height = view.bounds.size.height>cellHeight?cellHeight:view.bounds.size.height;
+        rect.size.height = view.bounds.size.height>self.model.height?self.model.height:view.bounds.size.height;
         rect.origin.x = Swidth - rect.size.width-34;
-        rect.origin.y = (cellHeight-rect.size.height)/2;
+        rect.origin.y = (self.model.height-rect.size.height)/2;
     }
     return rect;
 }

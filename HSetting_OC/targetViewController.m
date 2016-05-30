@@ -13,7 +13,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     NSLog(self.currentTitle);
-    self.currentTitle = @"朱子豪";
+    self.currentTitle = @"朱子豪BBB";
     
     self.button.frame = CGRectMake(0, 0, 100, 100);
     self.button.backgroundColor = [UIColor redColor];
